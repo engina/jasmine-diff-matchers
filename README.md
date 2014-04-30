@@ -33,17 +33,19 @@ Then you can use .toArrayEqual() and .toStringEqual() in your tests.
 API
 ===
 
-toArrayEqual
------------------
-	expect(result).toArrayEqual(expected)
+toArrayEqual()
+-------------------
+	expect([1, 2, 3]).toArrayEqual([1, 2, 3]) // passes
+	expect([3, 2, 1]).toArrayEqual([1, 2, 3]) // fails
 Compares *result* and *expected* resursively and pinpoints the difference if there's any.
 
-toUnsortedArrayEqual
-------------------------------
-	expect(result).toUnsortedArrayEqual(expected)
+toUnsortedArrayEqual()
+-------------------------------
+	expect([3, 2, 1]).toArrayEqual([1, 2, 3]) // passes
+	expect([1, [2, 3], 3]).toUnsortedArrayEqual([3,1, [3, 2]]) // passes
 Exactly like **toArrayEqual** expect that it resursively sorts the *result* and *expected* first.
 
-toStringEqual
-------------------
-	expect(result).toStringEqual(expected)
+toStringEqual()
+--------------------
+	expect('abcdef').toStringEqual('abCdef') // fails
 Compares strings and pinpoints any difference if there's any.

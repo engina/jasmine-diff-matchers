@@ -1,7 +1,7 @@
 {
   "name": "jasmine-diff-matchers",
   "main": "dist/jasmine-diff-matchers.js",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "authors": [
     "Engin AYDOGAN <e@ea.tl>"
   ],

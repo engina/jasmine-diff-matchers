@@ -13,7 +13,7 @@ ea.matchers.toArrayEqual = function(util, customTesters) {
       };
 
       var r = ea.utils.arrayDiff(actual, expected, customTesters);
-      if (r !== true) {
+      if (r.pass !== true) {
         result.pass     = false;
         result.actual   = r.item1;
         result.expected = r.item2;
