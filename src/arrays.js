@@ -49,3 +49,13 @@ ea.matchers.toArrayEqual = function(util, customTesters) {
     }
   };
 };
+
+ea.matchers.toUnsortedArrayEqual = function(util, customTesters) {
+  return {
+    compare: function(actual, expected) {
+      ea.utils.arrayRecursiveSort(actual);
+      ea.utils.arrayRecursiveSort(expected);
+      return ea.matchers.toArrayEqual(util, customTesters).compare(actual, expected);
+    }
+  }
+};

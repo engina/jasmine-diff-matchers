@@ -1,11 +1,11 @@
 {
   "name": "jasmine-diff-matchers",
   "main": "dist/jasmine-diff-matchers.js",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "authors": [
     "Engin AYDOGAN <e@ea.tl>"
   ],
-  "description": "Jasmine matchers that pinpoints the differences between actual and expected.",
+  "description": "Jasmine matchers that pinpoints the differences between actual and expected results.",
   "keywords": [
     "jasmine",
     "matcher"

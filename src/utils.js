@@ -33,7 +33,9 @@ ea.utils.arrayDiff = function(arr1, arr2, customTesters, stack) {
       }
     }
   }
-  return {pass: true};
+  return {
+    pass: true
+  };
 };
 
 ea.utils.charfill = function(ch, n) {
@@ -41,6 +43,16 @@ ea.utils.charfill = function(ch, n) {
     return '';
   }
   return new Array(n + 1).join(ch);
+};
+
+ea.utils.arrayRecursiveSort = function(arr) {
+  for (var i = 0, l = arr.length; i < l; i++) {
+    if (arr[i] instanceof Array) {
+      ea.utils.arrayRecursiveSort(arr[i]);
+    }
+  }
+  arr.sort();
+  return arr;
 };
 
 ea.utils.ansi = {
