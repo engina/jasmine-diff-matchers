@@ -36,10 +36,10 @@ ea.matchers.toArrayEqual = function(util, customTesters) {
           }
           
           if(a === undefined) {
-            a = 'undefined';
+            a = '';
           }
           if(b === undefined) {
-            b = 'undefined';
+            b = '';
           }
 
           line += a.substr(0, colWidth);
@@ -51,6 +51,16 @@ ea.matchers.toArrayEqual = function(util, customTesters) {
         }
       }
       return result;
+    }
+  };
+};
+
+ea.matchers.toUnsortedArrayEqual = function(util, customTesters) {
+  return {
+    compare: function(actual, expected) {
+      ea.utils.arrayRecursiveSort(actual);
+      ea.utils.arrayRecursiveSort(expected);
+      return ea.matchers.toArrayEqual(util, customTesters).compare(actual, expected);
     }
   };
 };
@@ -75,8 +85,7 @@ ea.matchers.toStringEqual = function(util, customTesters) {
       }
 
       var len = Math.max(actual.length, expected.length);
-      var strA = '', strB = '';
-      var color;
+      var strA = '', strB = '', color;
       function setColor(c) {
         if(color !== c) {
             color = c;
@@ -151,7 +160,9 @@ ea.utils.arrayDiff = function(arr1, arr2, customTesters, stack) {
       }
     }
   }
-  return {pass: true};
+  return {
+    pass: true
+  };
 };
 
 ea.utils.charfill = function(ch, n) {
@@ -161,13 +172,22 @@ ea.utils.charfill = function(ch, n) {
   return new Array(n + 1).join(ch);
 };
 
+ea.utils.arrayRecursiveSort = function(arr) {
+  for (var i = 0, l = arr.length; i < l; i++) {
+    if (arr[i] instanceof Array) {
+      ea.utils.arrayRecursiveSort(arr[i]);
+    }
+  }
+  arr.sort();
+  return arr;
+};
+
 ea.utils.ansi = {
   green: '\x1B[32m',
   red: '\x1B[31m',
   yellow: '\x1B[33m',
   none: '\x1B[0m'
 };
-
 beforeEach(function() {
   jasmine.addMatchers(ea.matchers);
 });

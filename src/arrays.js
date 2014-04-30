@@ -57,5 +57,5 @@ ea.matchers.toUnsortedArrayEqual = function(util, customTesters) {
       ea.utils.arrayRecursiveSort(expected);
       return ea.matchers.toArrayEqual(util, customTesters).compare(actual, expected);
     }
-  }
+  };
 };
