@@ -1,0 +1,19 @@
+{
+  "name": "jasmine-diff-matchers",
+  "version": "1.0.0",
+  "description": "Missing matchers for Jasmine with kick-ass error reporting so that you can actually see what's wrong",
+  "main": "index.js",
+  "author": "Engin Aydogan (http://ea.tl/)",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "peerDependencies": {
+    "karma-jasmine": "~0.2"
+  },
+  "devDependencies": {
+    "karma-phantomjs-launcher": "~0.1.0",
+    "karma-jasmine": "~0.2",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-watch": "~0.4.4",
+    "grunt-contrib-jshint": "^0.10.0"
+  }
+}

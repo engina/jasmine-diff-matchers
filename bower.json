@@ -1,0 +1,21 @@
+{
+  "name": "jasmine-diff-matchers",
+  "main": "dist/jasmine-diff-matchers.js",
+  "version": "1.0.0",
+  "authors": [
+    "Engin AYDOGAN <e@ea.tl>"
+  ],
+  "description": "Jasmine matchers that pinpoints the differences between actual and expected.",
+  "keywords": [
+    "jasmine",
+    "matcher"
+  ],
+  "license": "MIT",
+  "homepage": "http://ea.tl",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components"
+  ]
+}
